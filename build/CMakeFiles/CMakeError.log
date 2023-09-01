@@ -1,0 +1,24 @@
+Performing C++ SOURCE FILE Test ELF_GETSHDRSTRNDX failed with the following output:
+Change Dir: /home/alex_ubuntu/codefield/cmu15-445/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_97117/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_97117.dir/build.make CMakeFiles/cmTC_97117.dir/build
+gmake[1]: Entering directory '/home/alex_ubuntu/codefield/cmu15-445/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_97117.dir/src.cxx.o
+/usr/bin/g++ -DELF_GETSHDRSTRNDX  -fPIE -std=gnu++17 -o CMakeFiles/cmTC_97117.dir/src.cxx.o -c /home/alex_ubuntu/codefield/cmu15-445/build/CMakeFiles/CMakeTmp/src.cxx
+/home/alex_ubuntu/codefield/cmu15-445/build/CMakeFiles/CMakeTmp/src.cxx:1:10: fatal error: libelf.h: No such file or directory
+    1 | #include <libelf.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_97117.dir/build.make:78: CMakeFiles/cmTC_97117.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/alex_ubuntu/codefield/cmu15-445/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_97117/fast] Error 2
+
+
+Source file was:
+#include <libelf.h>
+int main() {
+  Elf *e = (Elf*)0;
+  size_t sz;
+  elf_getshdrstrndx(e, &sz);
+  return 0;
+}
